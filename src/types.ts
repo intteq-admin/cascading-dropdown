@@ -5,10 +5,16 @@ export interface CascadeLevel {
   fetch: (parentValue?: string) => Promise<any[]>;
   valueKey?: string;
   labelKey?: string;
+  disabled?: boolean; 
 }
 
 export interface CascadeDropdownProps {
   levels: CascadeLevel[];
   onChange?: (values: Record<string, any>) => void;
   placeholder?: string;
+  className?: string;
+  style?: React.CSSProperties;        // Container style
+  selectProps?: React.SelectHTMLAttributes<HTMLSelectElement>; // props for <select>
+  selectStyle?: Partial<React.CSSProperties>; // extra styles for each select
+  disabled?: boolean;
 }

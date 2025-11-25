@@ -6,14 +6,10 @@
     "module": "ESNext",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-
-    /* Library build */
     "declaration": true,
     "declarationDir": "./dist/types",
     "emitDeclarationOnly": true,
     "moduleResolution": "node",
-
-    /* Linting & safety */
     "strict": true,
     "skipLibCheck": true,
     "noUnusedLocals": true,

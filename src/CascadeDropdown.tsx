@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CascadeDropdownProps, CascadeLevel } from "./types";
 
 export default function CascadeDropdown({
@@ -14,6 +14,10 @@ export default function CascadeDropdown({
   const [values, setValues] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState<Record<string, boolean>>({});
 
+  const levelsRef = useRef(levels);
+ const levelsChanged = JSON.stringify(levels) !== JSON.stringify(levelsRef.current);
+ if (levelsChanged) levelsRef.current = levels;
+
   useEffect(() => {
     const loadInitialOptions = async () => {
       for (const level of levels) {
@@ -23,7 +27,7 @@ export default function CascadeDropdown({
       }
     };
     loadInitialOptions();
-  }, [levels]);
+  }, [levelsChanged]);
 
   const loadOptions = async (level: CascadeLevel, parentValue?: any) => {
     setLoading(prev => ({ ...prev, [level.name]: true }));

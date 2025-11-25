@@ -2,7 +2,7 @@ export interface CascadeLevel {
     name: string;
     label?: string;
     dependsOn?: string;
-    fetch: (parentValue?: string) => Promise<any[]>;
+    fetch: (parentValue?: unknown) => Promise<any[]>;
     valueKey?: string;
     labelKey?: string;
     disabled?: boolean;

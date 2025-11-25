@@ -1,5 +1,5 @@
-import re, { useState as M, useEffect as te } from "react";
-var N = { exports: {} }, S = {};
+import re, { useState as J, useRef as te, useEffect as ne } from "react";
+var $ = { exports: {} }, h = {};
 /**
  * @license React
  * react-jsx-runtime.production.js
@@ -9,29 +9,29 @@ var N = { exports: {} }, S = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var X;
-function ne() {
-  if (X) return S;
-  X = 1;
-  var c = Symbol.for("react.transitional.element"), m = Symbol.for("react.fragment");
-  function _(b, i, f) {
-    var R = null;
-    if (f !== void 0 && (R = "" + f), i.key !== void 0 && (R = "" + i.key), "key" in i) {
+var B;
+function ae() {
+  if (B) return h;
+  B = 1;
+  var s = Symbol.for("react.transitional.element"), m = Symbol.for("react.fragment");
+  function b(R, i, f) {
+    var T = null;
+    if (f !== void 0 && (T = "" + f), i.key !== void 0 && (T = "" + i.key), "key" in i) {
       f = {};
       for (var p in i)
         p !== "key" && (f[p] = i[p]);
     } else f = i;
     return i = f.ref, {
-      $$typeof: c,
-      type: b,
-      key: R,
+      $$typeof: s,
+      type: R,
+      key: T,
       ref: i !== void 0 ? i : null,
       props: f
     };
   }
-  return S.Fragment = m, S.jsx = _, S.jsxs = _, S;
+  return h.Fragment = m, h.jsx = b, h.jsxs = b, h;
 }
-var g = {};
+var A = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -41,47 +41,47 @@ var g = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var B;
-function ae() {
-  return B || (B = 1, process.env.NODE_ENV !== "production" && (function() {
-    function c(e) {
+var H;
+function oe() {
+  return H || (H = 1, process.env.NODE_ENV !== "production" && (function() {
+    function s(e) {
       if (e == null) return null;
       if (typeof e == "function")
         return e.$$typeof === K ? null : e.displayName || e.name || null;
       if (typeof e == "string") return e;
       switch (e) {
-        case t:
+        case w:
           return "Fragment";
-        case u:
+        case t:
           return "Profiler";
-        case d:
+        case I:
           return "StrictMode";
-        case l:
+        case E:
           return "Suspense";
-        case x:
+        case y:
           return "SuspenseList";
-        case Z:
+        case D:
           return "Activity";
       }
       if (typeof e == "object")
         switch (typeof e.tag == "number" && console.error(
           "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."
         ), e.$$typeof) {
-          case $:
+          case N:
             return "Portal";
-          case E:
+          case u:
             return e.displayName || "Context";
-          case s:
+          case d:
             return (e._context.displayName || "Context") + ".Consumer";
-          case v:
+          case c:
             var r = e.render;
             return e = e.displayName, e || (e = r.displayName || r.name || "", e = e !== "" ? "ForwardRef(" + e + ")" : "ForwardRef"), e;
-          case Y:
-            return r = e.displayName || null, r !== null ? r : c(e.type) || "Memo";
-          case I:
+          case l:
+            return r = e.displayName || null, r !== null ? r : s(e.type) || "Memo";
+          case _:
             r = e._payload, e = e._init;
             try {
-              return c(e(r));
+              return s(e(r));
             } catch {
             }
         }
@@ -90,7 +90,7 @@ function ae() {
     function m(e) {
       return "" + e;
     }
-    function _(e) {
+    function b(e) {
       try {
         m(e);
         var r = !1;
@@ -107,25 +107,25 @@ function ae() {
         ), m(e);
       }
     }
-    function b(e) {
-      if (e === t) return "<>";
-      if (typeof e == "object" && e !== null && e.$$typeof === I)
+    function R(e) {
+      if (e === w) return "<>";
+      if (typeof e == "object" && e !== null && e.$$typeof === _)
         return "<...>";
       try {
-        var r = c(e);
+        var r = s(e);
         return r ? "<" + r + ">" : "<...>";
       } catch {
         return "<...>";
       }
     }
     function i() {
-      var e = D.A;
+      var e = L.A;
       return e === null ? null : e.getOwner();
     }
     function f() {
       return Error("react-stack-top-frame");
     }
-    function R(e) {
+    function T(e) {
       if (U.call(e, "key")) {
         var r = Object.getOwnPropertyDescriptor(e, "key").get;
         if (r && r.isReactWarning) return !1;
@@ -144,23 +144,23 @@ function ae() {
         configurable: !0
       });
     }
-    function O() {
-      var e = c(this.type);
+    function x() {
+      var e = s(this.type);
       return z[e] || (z[e] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), e = this.props.ref, e !== void 0 ? e : null;
     }
-    function k(e, r, n, a, P, F) {
+    function k(e, r, n, a, C, W) {
       var o = n.ref;
       return e = {
-        $$typeof: j,
+        $$typeof: g,
         type: e,
         key: r,
         props: n,
         _owner: a
       }, (o !== void 0 ? o : null) !== null ? Object.defineProperty(e, "ref", {
         enumerable: !1,
-        get: O
+        get: x
       }) : Object.defineProperty(e, "ref", { enumerable: !1, value: null }), e._store = {}, Object.defineProperty(e._store, "validated", {
         configurable: !1,
         enumerable: !1,
@@ -175,33 +175,33 @@ function ae() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: P
+        value: C
       }), Object.defineProperty(e, "_debugTask", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: F
+        value: W
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
-    function A(e, r, n, a, P, F) {
+    function j(e, r, n, a, C, W) {
       var o = r.children;
       if (o !== void 0)
         if (a)
           if (Q(o)) {
             for (a = 0; a < o.length; a++)
-              h(o[a]);
+              P(o[a]);
             Object.freeze && Object.freeze(o);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else h(o);
+        else P(o);
       if (U.call(r, "key")) {
-        o = c(e);
-        var y = Object.keys(r).filter(function(ee) {
+        o = s(e);
+        var O = Object.keys(r).filter(function(ee) {
           return ee !== "key";
         });
-        a = 0 < y.length ? "{key: someKey, " + y.join(": ..., ") + ": ...}" : "{key: someKey}", G[o + a] || (y = 0 < y.length ? "{" + y.join(": ..., ") + ": ...}" : "{}", console.error(
+        a = 0 < O.length ? "{key: someKey, " + O.join(": ..., ") + ": ...}" : "{key: someKey}", X[o + a] || (O = 0 < O.length ? "{" + O.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -210,14 +210,14 @@ React keys must be passed directly to JSX without using spread:
   <%s key={someKey} {...props} />`,
           a,
           o,
-          y,
+          O,
           o
-        ), G[o + a] = !0);
+        ), X[o + a] = !0);
       }
-      if (o = null, n !== void 0 && (_(n), o = "" + n), R(r) && (_(r.key), o = "" + r.key), "key" in r) {
+      if (o = null, n !== void 0 && (b(n), o = "" + n), T(r) && (b(r.key), o = "" + r.key), "key" in r) {
         n = {};
-        for (var W in r)
-          W !== "key" && (n[W] = r[W]);
+        for (var M in r)
+          M !== "key" && (n[M] = r[M]);
       } else n = r;
       return o && p(
         n,
@@ -227,104 +227,104 @@ React keys must be passed directly to JSX without using spread:
         o,
         n,
         i(),
-        P,
-        F
+        C,
+        W
       );
     }
-    function h(e) {
-      w(e) ? e._store && (e._store.validated = 1) : typeof e == "object" && e !== null && e.$$typeof === I && (e._payload.status === "fulfilled" ? w(e._payload.value) && e._payload.value._store && (e._payload.value._store.validated = 1) : e._store && (e._store.validated = 1));
+    function P(e) {
+      S(e) ? e._store && (e._store.validated = 1) : typeof e == "object" && e !== null && e.$$typeof === _ && (e._payload.status === "fulfilled" ? S(e._payload.value) && e._payload.value._store && (e._payload.value._store.validated = 1) : e._store && (e._store.validated = 1));
     }
-    function w(e) {
-      return typeof e == "object" && e !== null && e.$$typeof === j;
+    function S(e) {
+      return typeof e == "object" && e !== null && e.$$typeof === g;
     }
-    var T = re, j = Symbol.for("react.transitional.element"), $ = Symbol.for("react.portal"), t = Symbol.for("react.fragment"), d = Symbol.for("react.strict_mode"), u = Symbol.for("react.profiler"), s = Symbol.for("react.consumer"), E = Symbol.for("react.context"), v = Symbol.for("react.forward_ref"), l = Symbol.for("react.suspense"), x = Symbol.for("react.suspense_list"), Y = Symbol.for("react.memo"), I = Symbol.for("react.lazy"), Z = Symbol.for("react.activity"), K = Symbol.for("react.client.reference"), D = T.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, U = Object.prototype.hasOwnProperty, Q = Array.isArray, L = console.createTask ? console.createTask : function() {
+    var v = re, g = Symbol.for("react.transitional.element"), N = Symbol.for("react.portal"), w = Symbol.for("react.fragment"), I = Symbol.for("react.strict_mode"), t = Symbol.for("react.profiler"), d = Symbol.for("react.consumer"), u = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), E = Symbol.for("react.suspense"), y = Symbol.for("react.suspense_list"), l = Symbol.for("react.memo"), _ = Symbol.for("react.lazy"), D = Symbol.for("react.activity"), K = Symbol.for("react.client.reference"), L = v.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, U = Object.prototype.hasOwnProperty, Q = Array.isArray, F = console.createTask ? console.createTask : function() {
       return null;
     };
-    T = {
+    v = {
       react_stack_bottom_frame: function(e) {
         return e();
       }
     };
-    var q, z = {}, J = T.react_stack_bottom_frame.bind(
-      T,
+    var q, z = {}, V = v.react_stack_bottom_frame.bind(
+      v,
       f
-    )(), V = L(b(f)), G = {};
-    g.Fragment = t, g.jsx = function(e, r, n) {
-      var a = 1e4 > D.recentlyCreatedOwnerStacks++;
-      return A(
+    )(), G = F(R(f)), X = {};
+    A.Fragment = w, A.jsx = function(e, r, n) {
+      var a = 1e4 > L.recentlyCreatedOwnerStacks++;
+      return j(
         e,
         r,
         n,
         !1,
-        a ? Error("react-stack-top-frame") : J,
-        a ? L(b(e)) : V
+        a ? Error("react-stack-top-frame") : V,
+        a ? F(R(e)) : G
       );
-    }, g.jsxs = function(e, r, n) {
-      var a = 1e4 > D.recentlyCreatedOwnerStacks++;
-      return A(
+    }, A.jsxs = function(e, r, n) {
+      var a = 1e4 > L.recentlyCreatedOwnerStacks++;
+      return j(
         e,
         r,
         n,
         !0,
-        a ? Error("react-stack-top-frame") : J,
-        a ? L(b(e)) : V
+        a ? Error("react-stack-top-frame") : V,
+        a ? F(R(e)) : G
       );
     };
-  })()), g;
+  })()), A;
 }
-var H;
-function oe() {
-  return H || (H = 1, process.env.NODE_ENV === "production" ? N.exports = ne() : N.exports = ae()), N.exports;
+var Z;
+function se() {
+  return Z || (Z = 1, process.env.NODE_ENV === "production" ? $.exports = ae() : $.exports = oe()), $.exports;
 }
-var C = oe();
-function ce({
-  levels: c,
+var Y = se();
+function ie({
+  levels: s,
   onChange: m,
-  className: _ = "",
-  style: b = {},
+  className: b = "",
+  style: R = {},
   selectProps: i = {},
   selectStyle: f = {},
-  disabled: R = !1
+  disabled: T = !1
 }) {
-  const [p, O] = M({}), [k, A] = M({}), [h, w] = M({});
-  te(() => {
+  const [p, x] = J({}), [k, j] = J({}), [P, S] = J({}), v = te(s), g = JSON.stringify(s) !== JSON.stringify(v.current);
+  g && (v.current = s), ne(() => {
     (async () => {
-      for (const d of c)
-        d.dependsOn || await T(d);
+      for (const d of s)
+        d.dependsOn || await N(d);
     })();
-  }, [c]);
-  const T = async (t, d) => {
-    w((u) => ({ ...u, [t.name]: !0 }));
+  }, [g]);
+  const N = async (t, d) => {
+    S((u) => ({ ...u, [t.name]: !0 }));
     try {
       const u = await t.fetch(d);
-      O((s) => ({ ...s, [t.name]: u || [] }));
+      x((c) => ({ ...c, [t.name]: u || [] }));
     } catch (u) {
-      console.error(`Error loading options for ${t.name}:`, u), O((s) => ({ ...s, [t.name]: [] }));
+      console.error(`Error loading options for ${t.name}:`, u), x((c) => ({ ...c, [t.name]: [] }));
     } finally {
-      w((u) => ({ ...u, [t.name]: !1 }));
+      S((u) => ({ ...u, [t.name]: !1 }));
     }
-  }, j = async (t, d) => {
-    const u = c.findIndex((l) => l.name === t.name), s = { ...k, [t.name]: d }, E = { ...p };
-    for (let l = u + 1; l < c.length; l++) {
-      const x = c[l].name;
-      s[x] = void 0, E[x] = [];
+  }, w = async (t, d) => {
+    const u = s.findIndex((l) => l.name === t.name), c = { ...k, [t.name]: d }, E = { ...p };
+    for (let l = u + 1; l < s.length; l++) {
+      const _ = s[l].name;
+      c[_] = void 0, E[_] = [];
     }
-    A(s), O(E);
-    const v = c[u + 1];
-    v && d && await T(v, d), m == null || m(s);
-  }, $ = (t) => !!(R || t.disabled || t.dependsOn && !k[t.dependsOn]);
-  return /* @__PURE__ */ C.jsx(
+    j(c), x(E);
+    const y = s[u + 1];
+    y && d && await N(y, d), m == null || m(c);
+  }, I = (t) => !!(T || t.disabled || t.dependsOn && !k[t.dependsOn]);
+  return /* @__PURE__ */ Y.jsx(
     "div",
     {
-      className: `cascade-dropdown ${_}`,
-      style: { display: "flex", gap: "12px", ...b },
-      children: c.map((t) => {
-        const d = p[t.name] || [], u = k[t.name], s = $(t), E = h[t.name], v = {
-          cursor: s || E ? "not-allowed" : "pointer",
-          opacity: s ? 0.5 : 1,
-          backgroundColor: s ? "#f5f5f5" : "#ffffff",
-          color: s ? "#999" : "#333",
-          border: s ? "1px solid #e0e0e0" : "1px solid #ccc",
+      className: `cascade-dropdown ${b}`,
+      style: { display: "flex", gap: "12px", ...R },
+      children: s.map((t) => {
+        const d = p[t.name] || [], u = k[t.name], c = I(t), E = P[t.name], y = {
+          cursor: c || E ? "not-allowed" : "pointer",
+          opacity: c ? 0.5 : 1,
+          backgroundColor: c ? "#f5f5f5" : "#ffffff",
+          color: c ? "#999" : "#333",
+          border: c ? "1px solid #e0e0e0" : "1px solid #ccc",
           padding: "8px 12px",
           borderRadius: "4px",
           fontSize: "14px",
@@ -332,20 +332,20 @@ function ce({
           outline: "none",
           minWidth: "150px"
         };
-        return /* @__PURE__ */ C.jsxs(
+        return /* @__PURE__ */ Y.jsxs(
           "select",
           {
             value: u || "",
-            disabled: s || E,
-            onChange: (l) => j(t, l.target.value),
+            disabled: c || E,
+            onChange: (l) => w(t, l.target.value),
             ...i,
             className: `cascade-select ${i.className || ""}`,
-            style: { ...v, ...f, ...i.style },
+            style: { ...y, ...f, ...i.style },
             children: [
-              /* @__PURE__ */ C.jsx("option", { value: "", children: E ? "Loading..." : `Select ${t.label || t.name}` }),
-              d.map((l, x) => {
-                const Y = l[t.valueKey || "id"];
-                return /* @__PURE__ */ C.jsx("option", { value: l[t.valueKey || "id"], children: l[t.labelKey || "name"] }, Y || `${t.name}-${x}`);
+              /* @__PURE__ */ Y.jsx("option", { value: "", children: E ? "Loading..." : `Select ${t.label || t.name}` }),
+              d.map((l, _) => {
+                const D = l[t.valueKey || "id"];
+                return /* @__PURE__ */ Y.jsx("option", { value: l[t.valueKey || "id"], children: l[t.labelKey || "name"] }, D || `${t.name}-${_}`);
               })
             ]
           },
@@ -356,5 +356,5 @@ function ce({
   );
 }
 export {
-  ce as CascadeDropdown
+  ie as CascadeDropdown
 };

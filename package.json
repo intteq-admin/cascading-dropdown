@@ -1,20 +1,35 @@
 {
   "name": "react-api-cascade-select",
   "version": "1.0.0",
-  "main": "dist/react-api-cascade-select.umd.js",
-  "module": "dist/react-api-cascade-select.es.js",
+  "description": "Flexible React cascading dropdown component with multi-level support, async fetching, and TypeScript compatibility.",
+  "main": "dist/react-api-cascade-select.cjs.js",       
+  "module": "dist/react-api-cascade-select.es.js",     
+  "browser": "dist/react-api-cascade-select.umd.js",   
   "types": "dist/types/index.d.ts",
-  "exports": {
-    "import": "./dist/react-api-cascade-select.es.js",
-    "require": "./dist/react-api-cascade-select.cjs.js",
-    "default": "./dist/react-api-cascade-select.umd.js"
-  },
   "files": ["dist"],
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "scripts": {
     "build": "vite build"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "cascading",
+    "dropdown",
+    "multi-level",
+    "component",
+    "nextjs"
+  ],
+  "author": "Thiben Akash <thibenakash171@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/react-api-cascade-select.es.js",
+      "require": "./dist/react-api-cascade-select.cjs.js",
+      "default": "./dist/react-api-cascade-select.umd.js"
+    }
   }
 }

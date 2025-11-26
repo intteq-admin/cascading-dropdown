@@ -27,6 +27,9 @@ yarn add react-api-cascade-select
 
 ## Usage
 
+
+```javascript
+
 // Example: Module Cascade (Grade → Course → Module)
 const moduleCascadeLevels: CascadeLevel[] = [
   {
@@ -67,3 +70,9 @@ const moduleCascadeLevels: CascadeLevel[] = [
   selectProps={{ className: "border p-2 rounded" }}
   selectStyle={{ minWidth: 200 }}
 />
+
+);```
+
+
+
+![alt text](<Screenshot 2025-11-26 131802.png>)

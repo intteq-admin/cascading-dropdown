@@ -1,6 +1,7 @@
 export interface CascadeLevel {
     name: string;
     label?: string;
+    placeholder?: string;
     dependsOn?: string;
     fetch: (parentValue?: unknown) => Promise<any[]>;
     valueKey?: string;

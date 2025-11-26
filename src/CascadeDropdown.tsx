@@ -106,9 +106,10 @@ export default function CascadeDropdown({
             className={`cascade-select ${selectProps.className || ""}`}
             style={{ ...defaultSelectStyle, ...selectStyle, ...selectProps.style }}
           >
-            <option value="">
-              {isLoading ? "Loading..." : `Select ${level.label || level.name}`}
+           <option value="">
+              {isLoading ? "Loading..." : (level.placeholder || `Select ${level.label || level.name}`)}
             </option>
+
             {opts.map((item, index) => {
               const key = item[level.valueKey || "id"];
               return (

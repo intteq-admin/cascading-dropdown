@@ -10,25 +10,26 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true,     
-      outDir: "dist/types",            
+      insertTypesEntry: true,
+      outDir: "dist/types",
       copyDtsFiles: true,
-    })
+    }),
   ],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "ReactApiCascadeSelect",
-      fileName: (format) => `react-api-cascade-select.${format}.js`
+      formats: ["es", "cjs", "umd"],
+      fileName: (format) => `react-api-cascade-select.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM"
-        }
-      }
-    }
-  }
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
+  },
 });

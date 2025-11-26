@@ -57,10 +57,9 @@ export default function CascadeDropdown({
     setOptions(newOptions);
 
     const nextLevel = levels[levelIndex + 1];
-    if (nextLevel && (selectedValue ?? null) !== null) {
+    if (nextLevel && selectedValue != null && selectedValue !== "") {
       await loadOptions(nextLevel, selectedValue);
     }
-
     onChange?.(newValues);
   };
 
@@ -74,7 +73,8 @@ export default function CascadeDropdown({
       values[level.dependsOn] === "")
   ) {
     return true;
-}    return false;
+  }    
+return false;
 };
 
   return (

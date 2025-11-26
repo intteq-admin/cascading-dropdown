@@ -57,7 +57,7 @@ export default function CascadeDropdown({
     setOptions(newOptions);
 
     const nextLevel = levels[levelIndex + 1];
-    if (nextLevel && selectedValue) {
+    if (nextLevel && (selectedValue ?? null) !== null) {
       await loadOptions(nextLevel, selectedValue);
     }
 
@@ -67,9 +67,15 @@ export default function CascadeDropdown({
   const isLevelDisabled = (level: CascadeLevel) => {
     if (disabled) return true;
     if (level.disabled) return true;
-    if (level.dependsOn && !values[level.dependsOn]) return true;
-    return false;
-  };
+  if (
+    level.dependsOn &&
+    (values[level.dependsOn] === undefined ||
+      values[level.dependsOn] === null ||
+      values[level.dependsOn] === "")
+  ) {
+    return true;
+}    return false;
+};
 
   return (
     <div
@@ -99,7 +105,7 @@ export default function CascadeDropdown({
         return (
           <select
             key={level.name}
-            value={val || ""}
+            value={val ?? ""}
             disabled={levelDisabled || isLoading}
             onChange={e => handleChange(level, e.target.value)}
             {...selectProps}

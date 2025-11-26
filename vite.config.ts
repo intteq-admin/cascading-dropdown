@@ -15,6 +15,7 @@ export default defineConfig({
       copyDtsFiles: true,
     }),
   ],
+
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
@@ -22,14 +23,19 @@ export default defineConfig({
       formats: ["es", "cjs", "umd"],
       fileName: (format) => `react-api-cascade-select.${format}.js`,
     },
+
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime"
+      ],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM",
-        },
-      },
-    },
-  },
+          "react-dom": "ReactDOM"
+        }
+      }
+    }
+  }
 });

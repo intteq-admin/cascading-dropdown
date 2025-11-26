@@ -42,7 +42,7 @@ const moduleCascadeLevels: CascadeLevel[] = [
   {
     name: "course",
     label: "Course",
-    dependsOn: "grade", // depends on grade selection
+    dependsOn: "grade", 
     fetch: async (gradeId?: string) => {
       if (!gradeId) return [];
       return await getCourseByGradeId(gradeId);
@@ -53,7 +53,7 @@ const moduleCascadeLevels: CascadeLevel[] = [
   {
     name: "module",
     label: "Module",
-    dependsOn: "course", // depends on course selection
+    dependsOn: "course", 
     fetch: async (courseId?: string) => {
       if (!courseId) return [];
       return await getModules(courseId);
@@ -65,7 +65,7 @@ const moduleCascadeLevels: CascadeLevel[] = [
 
 <CascadeDropdown
   levels={moduleCascadeLevels}
-  onChange={(values) => console.log(values)} // values: { grade?: string, course?: string, module?: string }
+  onChange={(values) => console.log(values)} 
   className="w-full"
   selectProps={{ className: "border p-2 rounded" }}
   selectStyle={{ minWidth: 200 }}

@@ -1,2 +1,2 @@
-export { default as CascadeDropdown } from './CascadeDropdown';
-export * from './types';
+export * from '../index'
+export {}

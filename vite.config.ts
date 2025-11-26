@@ -9,11 +9,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     react(),
-    dts({
-      insertTypesEntry: true,
-      outDir: "dist/types",
-      copyDtsFiles: true,
-    }),
+   dts({
+  insertTypesEntry: true,
+  copyDtsFiles: true,
+  rollupTypes: true // optional, to bundle types
+})
+,
   ],
 
   build: {

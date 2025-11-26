@@ -27,8 +27,6 @@ yarn add react-api-cascade-select
 
 ## Usage
 
-import { CascadeDropdown, CascadeLevel } from "react-api-cascade-select";
-
 // Example: Module Cascade (Grade → Course → Module)
 const moduleCascadeLevels: CascadeLevel[] = [
   {

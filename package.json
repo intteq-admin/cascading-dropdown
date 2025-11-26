@@ -31,5 +31,11 @@
       "require": "./dist/react-api-cascade-select.cjs.js",
       "default": "./dist/react-api-cascade-select.umd.js"
     }
-  }
+  },
+  "devDependencies": {
+  "vite": "^5.0.0",
+  "typescript": "^5.0.0",
+  "@types/react": "^18.0.0",
+  "@types/react-dom": "^18.0.0"
+}
 }

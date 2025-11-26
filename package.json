@@ -23,7 +23,7 @@
     "component",
     "nextjs"
   ],
-  "author": "Thiben Akash <thibenakash171@gmail.com>",
+  "author": "Thiben Akash, INTTEQ IT Solutions <thibenakash171@gmail.com>",
   "license": "MIT",
   "exports": {
     ".": {

@@ -9,12 +9,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     react(),
-   dts({
-  insertTypesEntry: true,
-  copyDtsFiles: true,
-  rollupTypes: true // optional, to bundle types
-})
-,
+    dts({
+      insertTypesEntry: true,
+      copyDtsFiles: true,
+      rollupTypes: true,
+      outDir: "dist/types",
+      exclude: ["**/*.test.ts", "**/*.test.tsx"],
+    }),
   ],
 
   build: {
@@ -26,17 +27,13 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "react/jsx-runtime"
-      ],
+      external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM"
-        }
-      }
-    }
-  }
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
+  },
 });

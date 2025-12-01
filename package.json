@@ -29,6 +29,7 @@
   "license": "MIT",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/react-api-cascade-select.es.js",
       "require": "./dist/react-api-cascade-select.cjs.js",
       "default": "./dist/react-api-cascade-select.umd.js"

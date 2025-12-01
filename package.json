@@ -1,6 +1,6 @@
 {
   "name": "react-api-cascade-select",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Flexible React cascading dropdown component with multi-level support, async fetching, and TypeScript compatibility.",
   "main": "dist/react-api-cascade-select.cjs.js",
   "module": "dist/react-api-cascade-select.es.js",

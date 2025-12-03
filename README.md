@@ -75,4 +75,7 @@ const moduleCascadeLevels: CascadeLevel[] = [
 
 
 
-![alt text](<Screenshot 2025-11-26 131802.png>)
+<img width="756" height="130" alt="Screenshot 2025-11-26 151540" src="https://github.com/user-attachments/assets/2755f903-12ad-49b0-8217-a84ded78765c" />
+![Sequence 01_1 (1)](https://github.com/user-attachments/assets/67143baf-1ea0-4603-9ccf-9ccee366a06a)
+
+

@@ -16,6 +16,10 @@ Perfect for integration in **React 18+** and **Next.js** projects.
 
 ---
 
+<img width="756" height="130" alt="Screenshot 2025-11-26 151540" src="https://github.com/user-attachments/assets/2755f903-12ad-49b0-8217-a84ded78765c" />
+
+![Sequence 01_1 (1)](https://github.com/user-attachments/assets/67143baf-1ea0-4603-9ccf-9ccee366a06a)
+
 ## Installation
 
 ```bash
@@ -42,7 +46,7 @@ const moduleCascadeLevels: CascadeLevel[] = [
   {
     name: "course",
     label: "Course",
-    dependsOn: "grade", // depends on grade selection
+    dependsOn: "grade", 
     fetch: async (gradeId?: string) => {
       if (!gradeId) return [];
       return await getCourseByGradeId(gradeId);
@@ -53,7 +57,7 @@ const moduleCascadeLevels: CascadeLevel[] = [
   {
     name: "module",
     label: "Module",
-    dependsOn: "course", // depends on course selection
+    dependsOn: "course", 
     fetch: async (courseId?: string) => {
       if (!courseId) return [];
       return await getModules(courseId);
@@ -65,7 +69,7 @@ const moduleCascadeLevels: CascadeLevel[] = [
 
 <CascadeDropdown
   levels={moduleCascadeLevels}
-  onChange={(values) => console.log(values)} // values: { grade?: string, course?: string, module?: string }
+  onChange={(values) => console.log(values)} 
   className="w-full"
   selectProps={{ className: "border p-2 rounded" }}
   selectStyle={{ minWidth: 200 }}
@@ -75,4 +79,4 @@ const moduleCascadeLevels: CascadeLevel[] = [
 
 
 
-![alt text](<Screenshot 2025-11-26 131802.png>)
+

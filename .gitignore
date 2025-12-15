@@ -80,7 +80,11 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+dist/*
+!dist/react-api-cascade-select.cjs.js
+!dist/react-api-cascade-select.es.js
+!dist/react-api-cascade-select.umd.js
+!dist/types/**
 
 # Gatsby files
 .cache/

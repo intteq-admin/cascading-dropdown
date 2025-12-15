@@ -11,8 +11,10 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      outDir: "dist/types",
       copyDtsFiles: true,
+      rollupTypes: true,
+      outDir: "dist/types",
+      exclude: ["**/*.test.ts", "**/*.test.tsx"],
     }),
   ],
 
@@ -25,17 +27,13 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "react/jsx-runtime"
-      ],
+      external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM"
-        }
-      }
-    }
-  }
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
+  },
 });

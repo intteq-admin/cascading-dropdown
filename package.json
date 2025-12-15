@@ -1,12 +1,14 @@
 {
   "name": "react-api-cascade-select",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Flexible React cascading dropdown component with multi-level support, async fetching, and TypeScript compatibility.",
-  "main": "dist/react-api-cascade-select.cjs.js",       
-  "module": "dist/react-api-cascade-select.es.js",     
-  "browser": "dist/react-api-cascade-select.umd.js",   
+  "main": "dist/react-api-cascade-select.cjs.js",
+  "module": "dist/react-api-cascade-select.es.js",
+  "browser": "dist/react-api-cascade-select.umd.js",
   "types": "dist/types/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
@@ -27,19 +29,20 @@
   "license": "MIT",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/react-api-cascade-select.es.js",
       "require": "./dist/react-api-cascade-select.cjs.js",
       "default": "./dist/react-api-cascade-select.umd.js"
     }
   },
   "devDependencies": {
-     "react": "^18.0.0",
-   "react-dom": "^18.0.0",
-  "vite": "^5.0.0",
-   "@vitejs/plugin-react": "^4.0.0",
-   "vite-plugin-dts": "^1.0.0",
-  "typescript": "^5.0.0",
-  "@types/react": "^18.0.0",
-  "@types/react-dom": "^18.0.0"
-}
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^4.5.4"
+  }
 }
